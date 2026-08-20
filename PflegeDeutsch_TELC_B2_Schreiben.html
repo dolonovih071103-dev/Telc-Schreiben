@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PflegeDeutsch — TELC B2 Pflege Schreiben</title>
+<style>
+:root{--bg:#f5f7fb;--surface:#fff;--ink:#172033;--muted:#6b7890;--line:#e5eaf2;--blue:#2563eb;--violet:#7c3aed;--green:#16a34a;--red:#dc2626;--amber:#d97706;--shadow:0 18px 55px #17203312}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% -10%,#dbeafe 0,transparent 32%),var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1240px;margin:auto;padding:18px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.brand{display:flex;gap:11px;align-items:center}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(135deg,var(--blue),var(--violet));display:grid;place-items:center;color:#fff;font-size:22px;box-shadow:0 10px 25px #2563eb30}.brand h1{font-size:20px;margin:0}.brand small{color:var(--muted)}.topstats{display:flex;gap:8px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 11px;font-size:12px}.stat b{font-size:15px}
+.hero{background:linear-gradient(135deg,#111b34,#29458d);color:#fff;border-radius:27px;padding:30px;position:relative;overflow:hidden;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:370px;height:370px;border:60px solid #fff1;border-radius:50%;right:-90px;top:-210px}.hero h2{font-size:35px;line-height:1.08;margin:0 0 10px;max-width:760px}.hero p{color:#d8e2ff;max-width:760px;line-height:1.55}.heroBtns{display:flex;gap:9px;flex-wrap:wrap}.primary,.ghost{border-radius:12px;padding:11px 15px;font-weight:700}.primary{background:#fff;color:#172033;border:0}.ghost{background:#ffffff18;color:#fff;border:1px solid #ffffff30}
+.layout{display:grid;grid-template-columns:310px 1fr;gap:17px;margin-top:17px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:21px;padding:17px;box-shadow:0 8px 30px #17203308}.panel h3{margin:0 0 12px}.sidebar{position:sticky;top:12px;height:max-content}.search{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;outline:none}.filters{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.chip{border:0;background:#f0f3f8;color:#526078;padding:7px 9px;border-radius:9px;font-size:12px}.chip.active{background:#dbeafe;color:#1d4ed8;font-weight:700}.taskList{max-height:570px;overflow:auto;display:grid;gap:6px}.task{border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px;text-align:left}.task:hover{border-color:#9ab7ff}.task.active{border-color:#2563eb;background:#eff6ff}.task b{display:block;font-size:13px}.task span{display:block;font-size:11px;color:var(--muted);margin-top:4px}.main{display:grid;gap:17px}.toolbar{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.modes{display:flex;gap:6px}.mode{border:0;background:#eef2f7;padding:9px 11px;border-radius:10px}.mode.on{background:#1d4ed8;color:#fff}.timer{font-variant-numeric:tabular-nums;font-weight:850;font-size:22px}.timer.danger{color:var(--red)}.progress{height:8px;background:#edf1f6;border-radius:99px;overflow:hidden;margin:11px 0}.bar{height:100%;background:linear-gradient(90deg,var(--blue),var(--violet));width:0;transition:.3s}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--muted)}.taskTitle{font-size:30px;margin:8px 0 15px}.prompt{font-size:17px;line-height:1.6}.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}.fact{background:#f7f8fb;border:1px solid var(--line);padding:10px;border-radius:10px;font-size:13px}.criteria{display:flex;flex-wrap:wrap;gap:7px}.criterion{background:#eef2f7;padding:7px 10px;border-radius:8px;font-size:12px}.startRow{display:flex;gap:8px;align-items:center;margin-top:22px}.startBtn{background:#111;color:#fff;border:0;border-radius:11px;padding:12px 16px;font-weight:800}.outline{background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 13px}
+.editorGrid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:17px}.editor{padding:0;overflow:hidden}.editorHead{display:flex;justify-content:space-between;padding:16px 19px;border-bottom:1px solid var(--line)}.editorHead span{color:var(--muted);font-size:13px}.editor textarea{width:100%;height:570px;border:0;resize:vertical;outline:none;padding:23px;font:17px/1.75 Georgia,serif}.actions{display:flex;justify-content:flex-end;gap:8px;padding:13px;border-top:1px solid var(--line)}.actions button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 12px}.actions .submit{background:#111;color:#fff;border-color:#111}.red h3{margin-bottom:8px}details{border-bottom:1px solid #eee;padding:10px 0}summary{font-weight:750;cursor:pointer}.phrase{font-size:13px;line-height:1.45;background:#f7f7f8;padding:8px;border-radius:7px;cursor:pointer}.phrase:hover{background:#eceef1}
+.resultHero{display:flex;justify-content:space-between;gap:20px;align-items:center}.bigScore{font-size:42px;font-weight:900}.subscore{color:var(--muted);font-size:13px}.scoreGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.score{background:#f6f7fa;border-radius:12px;padding:13px;text-align:center}.score b{font-size:24px;display:block}.score small{color:var(--muted)}.two{display:grid;grid-template-columns:1fr 1fr;gap:17px}.issue,.ok,.hint{padding:11px;border-radius:9px;margin:7px 0;font-size:14px;line-height:1.45}.issue{background:#fff1f0;color:#9f2d20}.ok{background:#eefaf1;color:#18713b}.hint{background:#fff8e7;color:#8a5a00}.correction{background:#f7f8fb;border:1px solid var(--line);padding:12px;border-radius:10px;margin:8px 0}.wrong{text-decoration:line-through;color:var(--red)}.right{color:var(--green);font-weight:700}.hidden{display:none!important}.footer{text-align:center;color:var(--muted);font-size:11px;padding:25px 0 8px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:static}.editorGrid,.two{grid-template-columns:1fr}.topstats{display:none}.scoreGrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.app{padding:12px}.hero h2{font-size:28px}.facts{grid-template-columns:1fr}.taskTitle{font-size:24px}.resultHero{display:block}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+<div class="brand"><div class="logo">✍️</div><div><h1>PflegeDeutsch</h1><small>Deutsch B2 Pflege · Schreiben</small></div></div>
+<div class="topstats"><div class="stat">Выполнено <b id="doneTop">0</b></div><div class="stat">Лучший балл <b id="bestTop">—</b></div></div>
+</header>
+
+<section class="hero">
+<h2>Schreiben, как на настоящем TELC B2 Pflege.</h2>
+<p>Тренажёр для письменных заданий: Aufnahmebericht, Übergabe и Biografiebericht. Таймер, поле для ответа, Redemittel и подробная тренировочная оценка.</p>
+<div class="heroBtns"><button class="primary" onclick="startExam()">Начать задание →</button><button class="ghost" onclick="randomTask()">Случайная тема</button></div>
+</section>
+
+<div class="layout">
+<aside class="panel sidebar">
+<h3>Aufgaben</h3>
+<input class="search" id="search" placeholder="Suche: Aufnahme, Übergabe…" oninput="renderTasks()">
+<div class="filters" id="filters"></div>
+<div class="taskList" id="taskList"></div>
+</aside>
+
+<main class="main">
+<section class="panel">
+<div class="toolbar">
+<div class="modes"><button class="mode on" id="mTask" onclick="setMode('task')">Aufgabe</button><button class="mode" id="mWrite" onclick="setMode('write')">Schreiben</button><button class="mode" id="mResult" onclick="setMode('result')">Auswertung</button></div>
+<div class="timer" id="timer">30:00</div>
+</div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+
+<div id="taskView">
+<div class="eyebrow" id="type"></div><div class="taskTitle" id="title"></div>
+<p class="prompt" id="prompt"></p>
+<h3>Angaben</h3><div class="facts" id="facts"></div>
+<h3>Dein Text sollte enthalten</h3><div class="criteria" id="criteria"></div>
+<div class="startRow"><button class="startBtn" onclick="startExam()">Prüfung starten →</button><button class="outline" onclick="showRedemittel()">Redemittel anzeigen</button></div>
+</div>
+
+<div id="writeView" class="editorGrid hidden">
+<div class="panel editor">
+<div class="editorHead"><b id="editorTitle"></b><span><b id="wordCount">0</b> Wörter</span></div>
+<textarea id="answer" placeholder="Schreiben Sie hier Ihren professionellen Text …" oninput="updateWords()"></textarea>
+<div class="actions"><button onclick="pause()">Pause</button><button onclick="downloadText()">Text speichern</button><button class="submit" onclick="submitAnswer()">Abgeben & bewerten</button></div>
+</div>
+<div class="panel red"><h3>Redemittel</h3><p style="font-size:12px;color:#777">Нажми на фразу, чтобы вставить её в текст.</p><div id="redemittel"></div></div>
+</div>
+
+<div id="resultView" class="hidden">
+<div class="panel resultHero">
+<div><div class="eyebrow">TRAINER-AUSWERTUNG</div><div class="bigScore" id="bigScore">— / 20</div><div class="subscore">Ориентировочная оценка тренажёра, не официальная оценка telc.</div></div>
+<div class="scoreGrid" id="scoreGrid"></div>
+</div>
+<div class="two">
+<div class="panel"><h3>Ошибки и подсказки</h3><div id="issues"></div></div>
+<div class="panel"><h3>Содержание задания</h3><div id="coverage"></div></div>
+</div>
+<div class="panel"><h3>Пример языковой коррекции</h3><div id="corrections"></div></div>
+<div class="panel"><h3>Что улучшить</h3><div id="advice"></div><button class="startBtn" onclick="setMode('write')">← Вернуться к тексту</button></div>
+</div>
+</section>
+
+<section class="panel"><h3>Твоя статистика</h3><div class="scoreGrid">
+<div class="score"><small>Заданий</small><b id="done">0</b></div><div class="score"><small>Лучший результат</small><b id="best">—</b></div><div class="score"><small>Средний балл</small><b id="avg">—</b></div><div class="score"><small>Слов в последнем тексте</small><b id="lastWords">0</b></div>
+</div></section>
+</main>
+</div>
+<div class="footer">PflegeDeutsch · Учебный проект. Формат и критерии необходимо сверять с актуальными официальными материалами telc.</div>
+</div>
+
+<script>
+const tasks=[
+{id:1,type:"AUFNAHMEBERICHT",cat:"Aufnahme",title:"Aufnahmebericht – Frau Schneider",minutes:30,
+prompt:"Sie arbeiten auf einer geriatrischen Station. Frau Schneider, 82 Jahre, wird nach einem Sturz aus dem Krankenhaus übernommen. Verfassen Sie einen strukturierten Aufnahmebericht für das Pflege-Team.",
+facts:["82 Jahre, lebt allein","Sturz im Badezimmer; keine Fraktur","Hypertonie und Diabetes mellitus Typ 2","unsicherer Gang, Rollator","Hörgerät links","Tochter besucht sie täglich","Allergie: Penicillin","nimmt 5 Medikamente täglich"],
+criteria:["Aufnahmeanlass","Anamnese / Diagnosen","Ressourcen und Risiken","Medikation / Allergien","Pflegebedarf / Maßnahmen"]},
+{id:2,type:"AUFNAHMEBERICHT",cat:"Aufnahme",title:"Aufnahmebericht – Herr Weber",minutes:30,
+prompt:"Herr Weber, 76 Jahre, wird zur Kurzzeitpflege aufgenommen. Schreiben Sie anhand der Informationen einen professionellen Aufnahmebericht.",
+facts:["76 Jahre, nach Hüftoperation","Mobilisation mit Unterarmgehstützen","Schmerz 5/10 bei Bewegung","isst selbstständig","benötigt Hilfe beim Duschen","Tochter ist Ansprechpartnerin","keine bekannten Allergien","Ziel: sichere Mobilisation"],
+criteria:["Aufnahmegrund","Mobilität und Schmerzen","Selbstständigkeit","Unterstützungsbedarf","Ziele / Maßnahmen"]},
+{id:3,type:"PFLEGEÜBERGABE",cat:"Übergabe",title:"Schriftliche Übergabe – Frau Müller",minutes:25,
+prompt:"Schreiben Sie eine schriftliche Übergabe für die nächste Schicht. Verwenden Sie die Informationen und formulieren Sie sachlich, präzise und übersichtlich.",
+facts:["Frau Müller, 79 Jahre","COPD","Atemnot bei Belastung","SpO₂ aktuell 93 %","Inhalation um 14 Uhr","trinkt wenig","Sturzrisiko erhöht","ärztliche Kontrolle bei Verschlechterung"],
+criteria:["aktueller Zustand","Beobachtungen / Werte","durchgeführte Maßnahmen","Risiken","Hinweise für nächste Schicht"]},
+{id:4,type:"BIOGRAFIEBERICHT",cat:"Biografie",title:"Biografiebericht – Herr Yilmaz",minutes:30,
+prompt:"Erstellen Sie einen kurzen Biografiebericht für das interprofessionelle Team. Achten Sie auf eine wertschätzende und pflegeorientierte Darstellung.",
+facts:["84 Jahre","stammt aus der Türkei","spricht Deutsch und Türkisch","war 40 Jahre Bäcker","mag klassische Musik","Familie ist sehr wichtig","benötigt Ruhe beim Essen","wünscht männliche Pflegekraft bei Körperpflege"],
+criteria:["Herkunft / Sprache","Beruf / Lebensgeschichte","Interessen","Gewohnheiten","individuelle Wünsche"]},
+{id:5,type:"AUFNAHMEBERICHT",cat:"Aufnahme",title:"Aufnahmebericht – Frau Becker",minutes:30,
+prompt:"Frau Becker wird nach einem Krankenhausaufenthalt in Ihre Einrichtung aufgenommen. Verfassen Sie einen professionellen Aufnahmebericht anhand der Angaben.",
+facts:["88 Jahre","nach Pneumonie behandelt","allgemein noch schwach","geht kurze Strecken mit Rollator","braucht Unterstützung beim Ankleiden","trinkt selbstständig, aber zu wenig","Tochter ist Kontaktperson","kein Fieber bei Aufnahme"],
+criteria:["Aufnahmegrund","aktueller Zustand","Mobilität","Selbstständigkeit","Risiken / Maßnahmen"]},
+{id:6,type:"PFLEGEÜBERGABE",cat:"Übergabe",title:"Übergabe – Herr Klein",minutes:25,
+prompt:"Verfassen Sie eine schriftliche Übergabe an die nächste Schicht.",
+facts:["Herr Klein, 71 Jahre","Diabetes mellitus Typ 2","BZ vor dem Mittagessen 186 mg/dl","Insulin nach ärztlicher Anordnung","kleine Hautläsion am rechten Unterschenkel","Wundversorgung durchgeführt","Patient mobil mit Rollator","Kontrolle der Wunde am Abend"],
+criteria:["Patientensituation","BZ / Therapie","Wunde","Mobilität","weitere Kontrolle"]}];
+
+const phrases={
+"Einleitung":["Herr/Frau … wurde am … auf unsere Station aufgenommen.","Der Patient / die Patientin wurde zur … aufgenommen.","Bei der Aufnahme zeigte sich folgende Situation:","Im Rahmen der Aufnahme wurden folgende Angaben erhoben:"],
+"Zustand":["Der Allgemeinzustand ist …","Der Patient ist zeitlich, örtlich und situativ orientiert.","Es besteht ein erhöhtes Risiko für …","Bei Belastung kommt es zu …","Die Mobilität ist derzeit eingeschränkt."],
+"Maßnahmen":["Es wurde … durchgeführt.","Zur Unterstützung wurde …","Die Mobilisation erfolgt mit …","Die Vitalzeichen werden regelmäßig kontrolliert.","Die weitere Beobachtung ist erforderlich."],
+"Übergang":["Darüber hinaus ist zu beachten, dass …","Im weiteren Verlauf sollte …","Für die nächste Schicht ist wichtig, dass …","Bei einer Verschlechterung des Zustands …"],
+"Schluss":["Zusammenfassend lässt sich feststellen, dass …","Weitere Maßnahmen erfolgen entsprechend der ärztlichen Anordnung.","Bei einer Verschlechterung ist unverzüglich die zuständige Pflegefachkraft bzw. der Arzt zu informieren."]
+};
+
+let idx=0,mode="task",seconds=1800,running=false,interval=null,result=null;
+let history=JSON.parse(localStorage.pflegeHistory||"[]");
+
+function saveHistory(score,words){history.push({score,words,date:new Date().toLocaleDateString("de-DE")});localStorage.pflegeHistory=JSON.stringify(history);drawStats()}
+function drawStats(){
+ document.getElementById("done").textContent=history.length;document.getElementById("doneTop").textContent=history.length;
+ let best=history.length?Math.max(...history.map(x=>x.score)):"—";let avg=history.length?(history.reduce((a,x)=>a+x.score,0)/history.length).toFixed(1):"—";
+ document.getElementById("best").textContent=best==="—"?"—":best+"/20";document.getElementById("bestTop").textContent=best==="—"?"—":best;
+ document.getElementById("avg").textContent=avg==="—"?"—":avg+"/20";document.getElementById("lastWords").textContent=document.getElementById("answer").value.trim()?document.getElementById("answer").value.trim().split(/\s+/).length:0;
+}
+function renderFilters(){let cats=["Все","Aufnahme","Übergabe","Biografie"];document.getElementById("filters").innerHTML=cats.map(c=>`<button class="chip ${(!window.cat&&c==="Все")||window.cat===c?"active":""}" onclick="window.cat='${c==='Alle'?'':c}';renderFilters();renderTasks()">${c}</button>`).join("")}
+function renderTasks(){let q=document.getElementById("search").value.toLowerCase(),cat=window.cat||"";let a=tasks.filter(t=>(!cat||t.cat===cat)&&(`${t.type} ${t.title}`.toLowerCase().includes(q)));document.getElementById("taskList").innerHTML=a.map(t=>`<button class="task ${t.id===tasks[idx].id?'active':''}" onclick="selectTask(${t.id})"><b>${t.type}</b><span>${t.title} · ${t.minutes} Min.</span></button>`).join("")}
+function selectTask(id){idx=tasks.findIndex(t=>t.id===id);resetTimer();result=null;setMode("task");renderTask();renderTasks()}
+function renderTask(){let t=tasks[idx];document.getElementById("type").textContent=`TELC B2 PFLEGE · ${t.type}`;document.getElementById("title").textContent=t.title;document.getElementById("prompt").textContent=t.prompt;document.getElementById("facts").innerHTML=t.facts.map(x=>`<div class="fact">• ${x}</div>`).join("");document.getElementById("criteria").innerHTML=t.criteria.map(x=>`<span class="criterion">${x}</span>`).join("");document.getElementById("editorTitle").textContent=t.title;renderRedemittel()}
+function renderRedemittel(){document.getElementById("redemittel").innerHTML=Object.entries(phrases).map(([k,a])=>`<details><summary>${k}</summary>${a.map(x=>`<p class="phrase" onclick="insertPhrase(this.textContent)">${x}</p>`).join("")}</details>`).join("")}
+function insertPhrase(s){let ta=document.getElementById("answer");let pos=ta.selectionStart;ta.value=ta.value.slice(0,pos)+(pos?" ":"")+s+ta.value.slice(ta.selectionEnd);ta.focus();updateWords()}
+function setMode(m){mode=m;["task","write","result"].forEach(x=>document.getElementById(x+"View").classList.toggle("hidden",m!==x));document.getElementById("mTask").classList.toggle("on",m==="task");document.getElementById("mWrite").classList.toggle("on",m==="write");document.getElementById("mResult").classList.toggle("on",m==="result");if(m==="write")startClock();if(m==="result"&&result)renderResult()}
+function resetTimer(){clearInterval(interval);running=false;seconds=tasks[idx].minutes*60;drawTimer()}
+function startClock(){if(running)return;running=true;interval=setInterval(()=>{seconds--;drawTimer();if(seconds<=0){clearInterval(interval);running=false;submitAnswer(true)}},1000)}
+function pause(){running=false;clearInterval(interval)}
+function startExam(){document.getElementById("answer").value="";updateWords();resetTimer();setMode("write")}
+function drawTimer(){let m=String(Math.floor(seconds/60)).padStart(2,"0"),s=String(seconds%60).padStart(2,"0");let el=document.getElementById("timer");el.textContent=`${m}:${s}`;el.classList.toggle("danger",seconds<300);document.getElementById("bar").style.width=((tasks[idx].minutes*60-seconds)/(tasks[idx].minutes*60)*100)+"%"}
+function updateWords(){let n=document.getElementById("answer").value.trim()?document.getElementById("answer").value.trim().split(/\s+/).length:0;document.getElementById("wordCount").textContent=n;document.getElementById("lastWords").textContent=n}
+function downloadText(){let t=tasks[idx];let content=`${t.title}\n\n${document.getElementById("answer").value}`;let a=document.createElement("a");a.href=URL.createObjectURL(new Blob([content],{type:"text/plain;charset=utf-8"}));a.download=`PflegeDeutsch-${t.id}.txt`;a.click()}
+function evaluateText(text,t){
+ let words=text.trim()?text.trim().split(/\s+/).length:0,issues=[],corrections=[];
+ if(words<100)issues.push("Der Text ist sehr kurz. Relevante Informationen werden dadurch möglicherweise nicht vollständig dargestellt.");
+ if(words<160)issues.push("Für eine ausführliche B2-Leistung sollte der Inhalt stärker entwickelt und miteinander verbunden werden.");
+ if(!/[.!?]/.test(text))issues.push("Achte auf vollständige Sätze und Satzzeichen.");
+ if(!/(außerdem|darüber hinaus|jedoch|deshalb|daher|während|obwohl|zusammenfassend|zunächst|anschließend)/i.test(text))issues.push("Verwende mehr Konnektoren, um Zusammenhänge klarer auf B2-Niveau auszudrücken.");
+ if(!/(Patient|Patientin|Pflege|Aufnahme|Zustand|Maßnahmen|Risiko|Mobilisation)/i.test(text))issues.push("Nutze präzise pflegebezogene Fachsprache.");
+ if(/\bich\b/i.test(text))issues.push("In einem professionellen Bericht ist eine sachliche, unpersönliche Formulierung meist passender.");
+ let coverage=t.criteria.map(c=>({c,ok:(()=>{let key=c.split(/[\/ ]/)[0].toLowerCase();return text.toLowerCase().includes(key)})()}));
+ let covered=coverage.filter(x=>x.ok).length;
+ let content=Math.min(5,Math.max(1,Math.round((covered/t.criteria.length)*5)));
+ if(words>=180)content=Math.min(5,content+1);
+ let structure=Math.min(5,Math.max(1,(text.includes("\n")?4:3)+(text.length>500?1:0)));
+ let vocab=Math.min(5,Math.max(1,/(Aufnahme|Patient|Pflege|Maßnahmen|Zustand|Risiko|Mobilisation|Vitalzeichen|Anamnese)/i.test(text)?4:2));
+ let language=Math.min(5,Math.max(1,5-(issues.length*.55)));
+ let total=Math.min(20,Math.max(1,content+structure+vocab+language));
+ let repeated=[["ich habe","es wurde"],["muss","ist erforderlich"],["sehr viel","deutlich"]];repeated.forEach(([a,b])=>{if(new RegExp("\\\\b"+a+"\\\\b","i").test(text))corrections.push([a,b])});
+ return {words,content,structure,vocab,language,total,issues,coverage,corrections}
+}
+function submitAnswer(auto=false){pause();let t=tasks[idx],text=document.getElementById("answer").value.trim();result=evaluateText(text,t);saveHistory(result.total,result.words);setMode("result");renderResult()}
+function renderResult(){if(!result)return;document.getElementById("bigScore").textContent=result.total.toFixed(1)+" / 20";let names=[["Inhalt",result.content],["Struktur",result.structure],["Wortschatz",result.vocab],["Sprache",result.language]];document.getElementById("scoreGrid").innerHTML=names.map(x=>`<div class="score"><b>${x[1].toFixed(1)}</b><small>${x[0]}</small></div>`).join("");
+document.getElementById("issues").innerHTML=result.issues.length?result.issues.map(x=>`<div class="issue">⚠ ${x}</div>`).join(""):`<div class="ok">✓ Keine groben Warnsignale gefunden.</div>`;
+document.getElementById("coverage").innerHTML=result.coverage.map(x=>`<div class="${x.ok?'ok':'hint'}">${x.ok?'✓':'○'} ${x.c}</div>`).join("");
+document.getElementById("corrections").innerHTML=result.corrections.length?result.corrections.map(x=>`<div class="correction"><span class="wrong">${x[0]}</span> → <span class="right">${x[1]}</span><br><small>Beispiel für eine professionellere Formulierung.</small></div>`).join(""):`<div class="ok">✓ Keine typischen Ersetzungen gefunden. Für echte Grammatikprüfung wird eine Sprach-KI benötigt.</div>`;
+let advice=[];if(result.content<4)advice.push("Alle Angaben aus der Aufgabenstellung systematisch verarbeiten.");if(result.structure<4)advice.push("Bericht klar gliedern: Situation → relevante Informationen → Maßnahmen → weiterer Verlauf.");if(result.vocab<4)advice.push("Mehr pflegefachliche Begriffe verwenden.");if(result.language<4)advice.push("Satzbau, Kasus, Artikel und Konnektoren gezielt kontrollieren.");if(!advice.length)advice.push("Text erneut unter Zeitdruck schreiben und anschließend gezielt auf Präzision und sprachliche Fehler prüfen.");document.getElementById("advice").innerHTML=advice.map(x=>`<div class="hint">💡 ${x}</div>`).join("")}
+function randomTask(){idx=Math.floor(Math.random()*tasks.length);resetTimer();result=null;renderTask();renderTasks();setMode("task")}
+function showRedemittel(){setMode("write");startClock()}
+renderFilters();renderTasks();renderTask();resetTimer();drawStats();
+</script>
+</body>
+</html>
